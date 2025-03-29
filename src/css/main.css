@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Conteneur de la grille */
+html,
+body {
+  background-color: #f2efe7;
+}
+.main {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.grid-container {
+  align-items: center;
+  background-color: pink;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 80%;
+  margin: auto;
+}
+
+/* Éléments de la grille */
+.grid-item {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/*  side bar style */
+.sideBarContainer {
+  position: fixed;
+  width: 25vw;
+  height: 100vh;
+  pointer-events: none;
+}
+nav {
+  background-color: rgba(112, 140, 167, 0.808);
+  backdrop-filter: blur(10px); /* Applies blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  position: relative;
+  height: 100vh;
+  width: 25vw;
+  transition: left 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav.active {
+  left: 0;
+  opacity: 1;
+}
+nav.inactive {
+  left: -25vw;
+  opacity: 0;
+}
+
+nav ul {
+  margin: 0;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & li {
+    margin: 0;
+    width: 100%;
+    list-style: none;
+  }
+}
+nav li * {
+  text-decoration: none;
+  list-style: none;
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+
+  background-color: #9acbd0;
+  width: 100%;
+  cursor: pointer;
+}
+
+/*nav bar activator*/
+
+button.btn_nav {
+  position: absolute;
+  border: none;
+  margin: 10px;
+  z-index: 2;
+  background-color: transparent;
+  transform: translateZ(0);
+  opacity: 1;
+  transition: left 0.2s ease-in-out;
+  pointer-events: auto;
+  cursor: pointer;
+  & img {
+    padding: 1px;
+    width: 2.5em;
+    height: 2.5em;
+  }
+}
+button.btn_nav.active {
+  left: 100%;
+}
+button.btn_nav.inactive {
+  left: 0%;
+}
+.test {
+  background-color: black;
+}
