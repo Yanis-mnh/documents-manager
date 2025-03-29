@@ -1,36 +1,49 @@
+/* Global Styles */
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-/* Conteneur de la grille */
 html,
 body {
-  background-color: #f2efe7;
+  background-color: #f8f9fa;
+  color: #333;
 }
+
+/* Main Container */
 .main {
   width: 100vw;
   display: flex;
   justify-content: center;
+  padding: 20px;
 }
+
+/* Grid Styles */
 .grid-container {
-  align-items: center;
-  background-color: pink;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 20px;
   padding: 20px;
   max-width: 80%;
   margin: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Éléments de la grille */
 .grid-item {
-  background-color: #f4f4f4;
+  background: #ffffff;
   padding: 20px;
   text-align: center;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.grid-item:hover {
+  background: #f1f1f1;
 }
 /*  side bar style */
 .sideBarContainer {
@@ -40,7 +53,7 @@ body {
   pointer-events: none;
 }
 nav {
-  background-color: rgba(112, 140, 167, 0.808);
+  background-color: rgba(158, 158, 158, 0.712);
   backdrop-filter: blur(10px); /* Applies blur effect */
   -webkit-backdrop-filter: blur(10px); /* For Safari support */
   position: relative;
@@ -80,10 +93,12 @@ nav li * {
   padding: 10px;
   margin: 5px 0;
   border: none;
-
-  background-color: #9acbd0;
+  background-color: #c2c2c2b7;
   width: 100%;
   cursor: pointer;
+}
+nav li *:hover {
+  background-color: #707070b7;
 }
 
 /*nav bar activator*/
@@ -104,6 +119,9 @@ button.btn_nav {
     width: 2.5em;
     height: 2.5em;
   }
+}
+.btn_nav:hover {
+  transform: scale(1.1);
 }
 button.btn_nav.active {
   left: 100%;
